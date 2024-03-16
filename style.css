@@ -15,6 +15,12 @@ body {
   color: #42210b;
 }
 
+@media only screen and (max-width: 800px) {
+  body {
+    padding: 4rem;
+  }
+}
+
 body:before {
   content: "";
   display: block;
@@ -47,8 +53,14 @@ h2 {
   font-family: 'Nunito';
   font-style: normal;
   font-weight: 800;
-  font-size: 42px;
+  font-size: 2.8rem;
   line-height: 120%;
+}
+
+@media only screen and (max-width: 800px) {
+  h2 {
+    font-size: 2rem;
+  }
 }
 
 p {
@@ -117,6 +129,10 @@ p {
           animation: logopulse 2s ease-in-out infinite alternate;
 }
 
+.logo-wrapper h1 {
+  margin-bottom: 0px;
+}
+
 .note {
   background-color: #FCE442;
   padding: 4rem;
@@ -124,6 +140,12 @@ p {
   position: relative;
   -webkit-transform: rotate(-3deg);
           transform: rotate(-3deg);
+}
+
+@media only screen and (max-width: 800px) {
+  .note {
+    padding: 3rem;
+  }
 }
 
 .note h2, .note p {
@@ -154,7 +176,16 @@ p {
   border-color: #42210B;
 }
 
-.note video {
+.note pre {
+  overflow: scroll;
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 2rem;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+.note video, .note img {
   width: 100%;
   border-radius: 1rem;
 }
@@ -233,6 +264,11 @@ p {
   top: 40%;
   -webkit-transform: translateX(-50%) rotate(-15deg);
           transform: translateX(-50%) rotate(-15deg);
+}
+
+.note.tiny-rotation {
+  -webkit-transform: rotate(0.5deg);
+          transform: rotate(0.5deg);
 }
 
 @-webkit-keyframes logopulse {

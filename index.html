@@ -6,6 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>LurkBait | Help and FAQ's</title>
 
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
@@ -20,25 +28,25 @@
         <h1>Help and <br>FAQ's</h1>
       </div>
       <div class="note grid-item">
-        <h2>How do I add LurkBait to my OBS?</h2>
+        <h2>How do I add LurkBait to my&nbsp;OBS?</h2>
         <div class="rule"></div>
-        <p>Once LurkBait is open, it can be added to OBS via a transparent game capture source. See the video below for a tutorial on how to do it.</p>
+        <p>Once LurkBait is open, it can be added to OBS via a <strong>Game Capture</strong> source with "Allow Transparency" turned on (recommended) or a <strong>Window Capture</strong> source with "Windows 10" capture method. See the video below for a tutorial on how to do both these options in OBS.</p>
         <video controls>
-          <source src="/images/obs.mp4" type="video/mp4">
+          <source src="/images/Lurkbait-OBS.mp4" type="video/mp4">
         </video>
       </div>
       <div class="note grid-item">
         <h2>There's a black box around the LurkBait window, I can't seem to get transparency working.</h2>
         <div class="rule"></div>
-        <p>Make sure you're using a game capture source in OBS and you've ticked "Enable transparency" in the source settings.</p>
+        <p>Make sure you're using a <strong>Game Capture</strong> source with "Allow Transparency" turned on in the source settings (recommended) or a <strong>Window Capture</strong> source with "Windows 10" capture method set in the source settings. There's a video tutorial on this page on how to do this.</p>
       </div>
       <div class="element grid-item">
         <img src="/images/Traffic Cone THUMB.png">
       </div>
       <div class="note grid-item">
-        <h2>What can players do with gold?</h2>
+        <h2>What can players do with&nbsp;gold?</h2>
         <div class="rule"></div>
-        <p>Right now gold is purely a status symbol and defines the peckin order on the leaderboards, but in a future update we intend to add a way for fishers to redeem their gold for cosmetics such as rods, lures, and bait. Keep an eye out for me details about this in the future!</p>
+        <p>Right now gold is purely a status symbol and defines the peckin' order on the leaderboards, but in a future update we intend to add a way for fishers to redeem their gold for cosmetics such as rods, lures, and bait. Keep an eye out for me details about this in the future!</p>
       </div>
 
       <div class="note grid-item">
@@ -58,7 +66,7 @@
       </div>
 
       <div class="note grid-item">
-        <h2>LurkBait is chugging like crazy!</h2>
+        <h2>LurkBait is chugging like&nbsp;crazy!</h2>
         <div class="rule"></div>
         <p>If you're having performance problems with Lurkbait, try lowering the resolution in the LurkBait settings and restarting the app, turning off "High details", and lowering the graphics quality settings.</p>
       </div>
@@ -85,9 +93,9 @@
         <img src="/images/Trolley THUMB.png">
       </div>
       <div class="note grid-item">
-        <h2>What size of image do you recommend for custom catches?</h2>
+        <h2>What size of image do you recommend for custom&nbsp;catches?</h2>
         <div class="rule"></div>
-        <p>Its not a rule but I'd recommend a square transparent PNG around 1000x1000 pixels.</p>
+        <p>It's not a rule but I'd recommend a square transparent PNG around 1000x1000 pixels.</p>
       </div>
       <div class="note grid-item">
         <h2>I have a suggestion!</h2>
@@ -103,9 +111,59 @@
         <img src="/images/Mug THUMB.png">
       </div>
       <div class="note grid-item">
-        <h2>LurkBait missed someones cast! And they paid for it too...</h2>
+        <h2>LurkBait missed someones cast! And they paid for it&nbsp;too...</h2>
         <div class="rule"></div>
         <p>If for whatever reason LurkBait misses someones chance to fish, the broadcaster and mods (if the "Allow mods to target cast" option is enabled) can use <span class="chat">!fish @username</span> to trigger the cast manually.</p>
+      </div>
+      <div class="note grid-item tiny-rotation">
+        <h2>I heard LurkBait can integrate with SAMMI Board!</h2>
+        <div class="rule"></div>
+        <p>It indeed can! Big thanks to <a href="https://twitter.com/Landie__" target="_blank">Landie</a> for directing this feature, without them this would not be possible ❤️</p>
+        <p>LurkBait can use SAMMI Webhooks, and provides two events if enabled in the LurkBait settings in the following format:</p>
+<p><strong>LurkBait Cast</strong></p>
+<pre>{
+    "trigger": "LurkBait Cast",
+    "username": "cambamthanksman",
+    "displayName": "CamBamThanksMan",
+    "castTrigger": "Bits"
+}</pre>
+<p><strong>LurkBait Catch</strong></p>
+<pre>{
+    "trigger": "LurkBait Catch",
+    "username": "cambamthanksman",
+    "displayName": "CamBamThanksMan",
+    "castTrigger": "Bits",
+    "catchName": "Starfish",
+    "catchDescription": "Let's call them Patrick.",
+    "catchRarity": "Uncommon",
+    "isCustomCatch": false,
+    "catchRating": 1,
+    "catchValue": 28,
+    "catchWeight": "0.09",
+    "catchThumbnailURL": "https://blam.cam/thumbnails/Starfish THUMB.png",
+    "playerGold": 0,
+    "playerLifetimeGold": 0,
+    "playerLeaderboardGold": 0
+}</pre>
+<p>Data from these events can be accessed in a SAMMI trigger and command combintation like this:</p>
+<img src="/images/sammi-trigger.jpg">
+<img src="/images/sammi-command.jpg">
+<p>I can't provide any support for your creative SAMMI projects but I'd love to see them if you do make anything! 🔥</p>
+      </div>
+      <div class="note grid-item">
+        <h2>Do "Test Catches" count towards the leaderboard of the dex?</h2>
+        <div class="rule"></div>
+        <p>Nope! Not anymore anyway, using the <strong>Test Cast</strong> button in the bottom left of the UI will not contribute to the leaderboard, streamer gold total, or the dex progress.</p>
+      </div>
+      <div class="note grid-item">
+        <h2>Can I use GIFs or Videos for custom catches?</h2>
+        <div class="rule"></div>
+        <p>This is a <strong>highly</strong> requested feature and something I personally really want to see. This is in the late stages of development and should be added to LurkBait very shortly.</p>
+      </div>
+      <div class="note grid-item">
+        <h2>Can I upload my own 3D models into LurkBait?</h2>
+        <div class="rule"></div>
+        <p>This is a feature I'm currently investigating through the Steam Workshop, and will hopefully come to LurkBait in the future.</p>
       </div>
 
     </div>

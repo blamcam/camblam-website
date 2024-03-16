@@ -8,6 +8,8 @@ $brown: #42210B;
 
 $nunito:  "Nunito", Arial, sans-serif;
 
+$mobile: 800px;
+
 * {
 	box-sizing: border-box;
 }
@@ -22,14 +24,12 @@ body {
 	background-color: $cream;
 	font-size:18px;
 	min-height: 100vh;
-	// display: flex;
-	// align-items: center;
-	// justify-content: center;
-	// overflow: hidden;
 	padding: 8rem;
 	color: #42210b;
 
-
+	@media only screen and (max-width: $mobile) {
+		padding: 4rem;
+	}
 
 	&:before {
 		content:"";
@@ -67,8 +67,12 @@ h2 {
 	font-family: 'Nunito';
 	font-style: normal;
 	font-weight: 800;
-	font-size: 42px;
+	font-size: 2.8rem;
 	line-height: 120%;
+
+	@media only screen and (max-width: $mobile) {
+		font-size:2rem;
+	}
 }
 
 p {
@@ -78,23 +82,8 @@ p {
 }
 
 .rule {
-	// height:6px;
-	// width:100%;
-	// display:block;
-	// //background-image: url("data:image/svg+xml,%3csvg width='1000px' height='6px' xmlns='http://www.w3.org/2000/svg'%3e%3cline x1='0' y1='3' x2='1000' y2='3' stroke='black' stroke-width='6' stroke-dasharray='6%2c 14' stroke-dashoffset='12' stroke-linecap='round'/%3e%3c/svg%3e");
-	// background-size: cover;
-	// //background-color: red;
 	border-bottom: $brown 2px solid;
 	opacity: 0.2;
-}
-.notes-container {
-	// display: grid;
-	// grid-template-columns: repeat(2, 1fr);
-	// grid-template-rows: masonry;
-
-	// column-gap: 8rem;
-	// row-gap: 8rem;
-
 }
 
 $note-margin: 3rem;
@@ -138,28 +127,28 @@ $note-margin: 3rem;
 
 	.logo {
 		max-width: 300px;
-		// margin-right: 2rem;
 		margin-top: -2rem;
 		margin-left: -2rem;
 
 		animation: logopulse 2s ease-in-out infinite alternate;
+	}
 
+	h1 {
+		margin-bottom: 0px;
 	}
 }
 
 .note {
-	
-	//width: calc(50% - $note-margin * 2rem);
 	background-color: $yellow;
 	padding: 4rem;
 	border-radius: 2rem;
 	position: relative;
-	
-	// max-width: 70rem;
-	// text-align: center;
-	// box-shadow: 0.8rem 0.8rem rgba(0,0,0,0.1);
 
 	transform: rotate(-3deg);
+
+	@media only screen and (max-width: $mobile) {
+		padding: 3rem;
+	}
 
 	h2, p {
 		margin: 2rem 0rem;
@@ -188,7 +177,16 @@ $note-margin: 3rem;
 		}
 	}
 
-	video {
+	pre {
+		overflow: scroll;
+		  border-radius: 1rem;
+		  background-color: rgba(255,255,255,0.4);
+		  padding: 2rem;
+		  font-size: 1rem;
+		  line-height: 1.3;
+	}
+
+	video, img {
 		width:100%;
 		border-radius: 1rem;
 	}
@@ -256,6 +254,10 @@ $note-margin: 3rem;
 			top: 40%;
 			transform: translateX(-50%) rotate(-15deg);
 		}
+	}
+
+	&.tiny-rotation {
+		transform: rotate(0.5deg);
 	}
 }
 
