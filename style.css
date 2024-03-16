@@ -1,0 +1,276 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+img, video {
+  max-width: 100%;
+}
+
+body {
+  background-color: #FFFAED;
+  font-size: 18px;
+  min-height: 100vh;
+  padding: 8rem;
+  color: #42210b;
+}
+
+body:before {
+  content: "";
+  display: block;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.05;
+  z-index: -1;
+  background-image: url("images/pattern.svg");
+  background-repeat: repeat;
+  background-size: 20rem;
+  -webkit-animation: slidebg 16s linear infinite normal;
+          animation: slidebg 16s linear infinite normal;
+}
+
+h1, h2, p {
+  font-family: "Nunito", Arial, sans-serif;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: 900;
+  margin-top: 0px;
+  text-shadow: 0.2rem 0.2rem rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 42px;
+  line-height: 120%;
+}
+
+p {
+  font-weight: 700;
+  margin-bottom: 0px;
+  line-height: 1.8;
+}
+
+.rule {
+  border-bottom: #42210B 2px solid;
+  opacity: 0.2;
+}
+
+.grid-item {
+  width: calc(50% -  3rem * 2);
+  margin: 3rem;
+}
+
+@media only screen and (max-width: 1200px) {
+  .grid-item {
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+
+.grid-item.element {
+  width: 1px;
+  height: 1px;
+  margin: 0px;
+}
+
+.grid-item.element img {
+  max-width: unset;
+  width: 15rem;
+  height: auto;
+  z-index: 99;
+  position: relative;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  -webkit-transition: 0.1s opacity;
+  transition: 0.1s opacity;
+}
+
+.grid-item.element img:hover {
+  opacity: 0.4;
+}
+
+.logo-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2rem;
+}
+
+.logo-wrapper .logo {
+  max-width: 300px;
+  margin-top: -2rem;
+  margin-left: -2rem;
+  -webkit-animation: logopulse 2s ease-in-out infinite alternate;
+          animation: logopulse 2s ease-in-out infinite alternate;
+}
+
+.note {
+  background-color: #FCE442;
+  padding: 4rem;
+  border-radius: 2rem;
+  position: relative;
+  -webkit-transform: rotate(-3deg);
+          transform: rotate(-3deg);
+}
+
+.note h2, .note p {
+  margin: 2rem 0rem;
+}
+
+.note > *:first-child {
+  margin-top: 0px;
+}
+
+.note > *:last-child {
+  margin-bottom: 0px;
+}
+
+.note a {
+  padding: 0 0.5em;
+  margin: 0 0.2em;
+  border: 2px solid;
+  border-radius: 0.5em;
+  text-decoration: none;
+  color: inherit;
+  font-size: 0.9em;
+}
+
+.note a:hover {
+  background-color: #42210B;
+  color: #FFFAED;
+  border-color: #42210B;
+}
+
+.note video {
+  width: 100%;
+  border-radius: 1rem;
+}
+
+.note:before {
+  -webkit-mask-image: url(images/tape-shape-1.svg);
+  mask-image: url(images/tape-shape-1.svg);
+  background-color: #40BB55;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+          mask-position: center;
+  -webkit-mask-size: cover;
+          mask-size: cover;
+  mask-repeat: no-repeat;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 10%;
+  width: 4rem;
+  height: 7rem;
+  -webkit-transform: translateY(-50%) rotate(15deg);
+          transform: translateY(-50%) rotate(15deg);
+  opacity: 0.5;
+}
+
+.note:nth-child(5n + 2) {
+  background-color: #40BB55;
+  -webkit-transform: rotate(2deg);
+          transform: rotate(2deg);
+}
+
+.note:nth-child(5n + 2):before {
+  background-color: #EC7750;
+  left: 90%;
+  -webkit-transform: translateY(-50%) rotate(-45deg);
+          transform: translateY(-50%) rotate(-45deg);
+}
+
+.note:nth-child(5n + 3) {
+  background-color: #EC7750;
+  -webkit-transform: rotate(-1deg);
+          transform: rotate(-1deg);
+}
+
+.note:nth-child(5n + 3):before {
+  background-color: #54CCFF;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%) rotate(-92deg);
+          transform: translateX(-50%) translateY(-50%) rotate(-92deg);
+}
+
+.note:nth-child(5n + 4) {
+  background-color: #54CCFF;
+  -webkit-transform: rotate(3deg);
+          transform: rotate(3deg);
+}
+
+.note:nth-child(5n + 4):before {
+  background-color: #FCE442;
+  left: 0%;
+  top: 20%;
+  -webkit-transform: translateX(-50%) rotate(30deg);
+          transform: translateX(-50%) rotate(30deg);
+}
+
+.note:nth-child(5n + 5) {
+  background-color: #E8B9F8;
+  -webkit-transform: rotate(3deg);
+          transform: rotate(3deg);
+}
+
+.note:nth-child(5n + 5):before {
+  background-color: #FCE442;
+  left: 100%;
+  top: 40%;
+  -webkit-transform: translateX(-50%) rotate(-15deg);
+          transform: translateX(-50%) rotate(-15deg);
+}
+
+@-webkit-keyframes logopulse {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+}
+
+@keyframes logopulse {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+}
+
+@-webkit-keyframes slidebg {
+  from {
+    background-position: 0rem 0rem;
+  }
+  to {
+    background-position: 20rem 20rem;
+  }
+}
+
+@keyframes slidebg {
+  from {
+    background-position: 0rem 0rem;
+  }
+  to {
+    background-position: 20rem 20rem;
+  }
+}

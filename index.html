@@ -4,10 +4,118 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>HTML 5 Boilerplate</title>
-    <!-- <link rel="stylesheet" href="style.css"> -->
+    <title>LurkBait | Help and FAQ's</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-	<!-- <script src="index.js"></script> -->
+    <div class="notes-container">
+      <div class="logo-wrapper grid-item">
+        <img class="logo" src="/images/lurkbait-logo.png">
+        <h1>Help and <br>FAQ's</h1>
+      </div>
+      <div class="note grid-item">
+        <h2>How do I add LurkBait to my OBS?</h2>
+        <div class="rule"></div>
+        <p>Once LurkBait is open, it can be added to OBS via a transparent game capture source. See the video below for a tutorial on how to do it.</p>
+        <video controls>
+          <source src="/images/obs.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="note grid-item">
+        <h2>There's a black box around the LurkBait window, I can't seem to get transparency working.</h2>
+        <div class="rule"></div>
+        <p>Make sure you're using a game capture source in OBS and you've ticked "Enable transparency" in the source settings.</p>
+      </div>
+      <div class="element grid-item">
+        <img src="/images/Traffic Cone THUMB.png">
+      </div>
+      <div class="note grid-item">
+        <h2>What can players do with gold?</h2>
+        <div class="rule"></div>
+        <p>Right now gold is purely a status symbol and defines the peckin order on the leaderboards, but in a future update we intend to add a way for fishers to redeem their gold for cosmetics such as rods, lures, and bait. Keep an eye out for me details about this in the future!</p>
+      </div>
+
+      <div class="note grid-item">
+        <h2>Do I need to launch LurkBait through Steam?</h2>
+        <div class="rule"></div>
+        <p>If for whatever reason you're having problems launching LurkBait through Steam — you can launch it manually by going to LurkBait in your library, clicking the ⚙️ icon, the clicking "Manage" then "Browse local files" and launching the LurkBait exe from there.</p>
+        <p>This is a great option if you have a streaming PC thats different from your gaming PC and you can't launch steam games from two computers at once.</p>
+      </div>
+
+      <div class="note grid-item">
+        <h2>LurkBait won't go away!</h2>
+        <div class="rule"></div>
+        <p>The autohide button in the lower left corner of the window will turn on autohide, which will transition the window in and out when needed.</p>
+      </div>
+      <div class="element grid-item">
+        <img src="/images/Thong THUMB.png">
+      </div>
+
+      <div class="note grid-item">
+        <h2>LurkBait is chugging like crazy!</h2>
+        <div class="rule"></div>
+        <p>If you're having performance problems with Lurkbait, try lowering the resolution in the LurkBait settings and restarting the app, turning off "High details", and lowering the graphics quality settings.</p>
+      </div>
+            <div class="element grid-item">
+        <img src="/images/Rubber Ducky THUMB.png">
+      </div>
+      <div class="note grid-item">
+        <h2>LurkBait is wayyyy too big for my screen!</h2>
+        <div class="rule"></div>
+        <p>You can shrink LurkBait by lowering the resolution in the LurkBait settings and restarting the app.</p>
+      </div>
+      <div class="note grid-item">
+        <h2>Are custom catches included in the normal catch pool?</h2>
+        <div class="rule"></div>
+        <p>If "Custom only mode" is DISABLED in the LurkBait settings panel (the default setting), custom catches will be included in amongst the regular catch pool. If "Custom only mode" is ENABLED, only the custom catches will be avaiable for players to catch (as long as you have 1 or more custom catches), no in-built catches will show up.</p>
+      </div>
+
+      <div class="note grid-item">
+        <h2>Is there a limit to the number of custom catches I can add?</h2>
+        <div class="rule"></div>
+        <p>Nope! People have added hundreds without impacting performance.</p>
+      </div>
+      <div class="element grid-item">
+        <img src="/images/Trolley THUMB.png">
+      </div>
+      <div class="note grid-item">
+        <h2>What size of image do you recommend for custom catches?</h2>
+        <div class="rule"></div>
+        <p>Its not a rule but I'd recommend a square transparent PNG around 1000x1000 pixels.</p>
+      </div>
+      <div class="note grid-item">
+        <h2>I have a suggestion!</h2>
+        <div class="rule"></div>
+        <p>I love suggestions! Feel free to join my <a href="https://discord.gg/h3RCuY5u2e" target="_blank">Discord</a> to suggest anything, or you can check my <a href="https://blamcam.notion.site/76d21a5fcde34fd2be3c40e72a7c96cf?v=64d0ccfd131744dba7f45949fb4dd8f1" target="_blank">Notion board</a> to see what I'm currently working on and whats coming up.</p>
+      </div>
+      <div class="note grid-item">
+        <h2>Can I use LurkBait if I'm an IRL streamer?</h2>
+        <div class="rule"></div>
+        <p>If you use any other application to stream other than OBS, you unfortunately cannot use LurkBait. LurkBait currently does not work with streaming from the Twitch Mobile App, or directly from a GoPro.</p>
+      </div>
+      <div class="element grid-item">
+        <img src="/images/Mug THUMB.png">
+      </div>
+      <div class="note grid-item">
+        <h2>LurkBait missed someones cast! And they paid for it too...</h2>
+        <div class="rule"></div>
+        <p>If for whatever reason LurkBait misses someones chance to fish, the broadcaster and mods (if the "Allow mods to target cast" option is enabled) can use <span class="chat">!fish @username</span> to trigger the cast manually.</p>
+      </div>
+
+    </div>
+
+    <script
+        src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="index.js"></script>
+
   </body>
 </html>

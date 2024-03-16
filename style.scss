@@ -1,0 +1,280 @@
+$cream: #FFFAED;
+$yellow: #FCE442;
+$green: #40BB55;
+$orange: #EC7750;
+$blue: #54CCFF;
+$purple: #E8B9F8;
+$brown: #42210B;
+
+$nunito:  "Nunito", Arial, sans-serif;
+
+* {
+	box-sizing: border-box;
+}
+
+img,video {
+	max-width: 100%;
+}
+
+$background-size: 20rem;
+
+body {
+	background-color: $cream;
+	font-size:18px;
+	min-height: 100vh;
+	// display: flex;
+	// align-items: center;
+	// justify-content: center;
+	// overflow: hidden;
+	padding: 8rem;
+	color: #42210b;
+
+
+
+	&:before {
+		content:"";
+		display:block;
+		position: fixed;
+		top: 0px;
+		left:0px;
+		width: 100vw;
+		height: 100vh;
+		opacity: 0.05;
+		z-index:-1;
+
+		background-image: url("images/pattern.svg");
+
+		background-repeat: repeat;
+		background-size: $background-size;
+
+		animation: slidebg 16s linear infinite normal;
+	}
+}
+
+h1,h2,p {
+	font-family: $nunito;
+	
+}
+
+h1 {
+	font-size: 4rem;
+	font-weight: 900;
+	margin-top:0px;
+	text-shadow: 0.2rem 0.2rem rgba(0,0,0,0.2);
+}
+
+h2 {
+	font-family: 'Nunito';
+	font-style: normal;
+	font-weight: 800;
+	font-size: 42px;
+	line-height: 120%;
+}
+
+p {
+	font-weight: 700;
+	margin-bottom:0px;
+	line-height: 1.8;
+}
+
+.rule {
+	// height:6px;
+	// width:100%;
+	// display:block;
+	// //background-image: url("data:image/svg+xml,%3csvg width='1000px' height='6px' xmlns='http://www.w3.org/2000/svg'%3e%3cline x1='0' y1='3' x2='1000' y2='3' stroke='black' stroke-width='6' stroke-dasharray='6%2c 14' stroke-dashoffset='12' stroke-linecap='round'/%3e%3c/svg%3e");
+	// background-size: cover;
+	// //background-color: red;
+	border-bottom: $brown 2px solid;
+	opacity: 0.2;
+}
+.notes-container {
+	// display: grid;
+	// grid-template-columns: repeat(2, 1fr);
+	// grid-template-rows: masonry;
+
+	// column-gap: 8rem;
+	// row-gap: 8rem;
+
+}
+
+$note-margin: 3rem;
+
+.grid-item {
+	width: calc(50% -  #{$note-margin} * 2);
+	margin: $note-margin;
+
+	@media only screen and (max-width: 1200px) {
+		width: 100%;
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+}
+
+.grid-item.element {
+	width:1px;
+	height:1px;
+	margin:0px;
+
+	img {
+		max-width: unset;
+		width: 15rem;
+		height: auto;
+		z-index: 99;
+		position: relative;
+		transform: translateX(-50%) translateY(-50%);
+		transition: 0.1s opacity;
+
+		&:hover {
+			opacity: 0.4;
+		}
+	}
+}
+
+.logo-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 2rem;
+
+	.logo {
+		max-width: 300px;
+		// margin-right: 2rem;
+		margin-top: -2rem;
+		margin-left: -2rem;
+
+		animation: logopulse 2s ease-in-out infinite alternate;
+
+	}
+}
+
+.note {
+	
+	//width: calc(50% - $note-margin * 2rem);
+	background-color: $yellow;
+	padding: 4rem;
+	border-radius: 2rem;
+	position: relative;
+	
+	// max-width: 70rem;
+	// text-align: center;
+	// box-shadow: 0.8rem 0.8rem rgba(0,0,0,0.1);
+
+	transform: rotate(-3deg);
+
+	h2, p {
+		margin: 2rem 0rem;
+	}
+
+	& > *:first-child {
+		margin-top: 0px;
+	}
+	& > *:last-child {
+		margin-bottom: 0px;
+	}
+
+	a {
+		padding: 0 0.5em;
+		margin: 0 0.2em;
+		border: 2px solid;
+		border-radius: 0.5em;
+		text-decoration: none;
+		color: inherit;
+		font-size: 0.9em;
+
+		&:hover {
+			background-color: $brown;
+			color: $cream;
+			border-color: $brown;
+		}
+	}
+
+	video {
+		width:100%;
+		border-radius: 1rem;
+	}
+
+	&:before{
+		-webkit-mask-image: url(images/tape-shape-1.svg);
+		mask-image: url(images/tape-shape-1.svg);
+		background-color: $green;
+		-webkit-mask-repeat: no-repeat;
+		mask-position: center;
+		mask-size: cover;
+		mask-repeat: no-repeat;
+		content: "";
+		display: block;
+		position: absolute;
+		top:0px;
+		left:10%;
+		width: 4rem;
+		height: 7rem;
+		transform: translateY(-50%) rotate(15deg);
+		opacity: 0.5;
+	}
+
+	&:nth-child(5n + 2) {
+		background-color: $green;
+		transform: rotate(2deg);
+
+		&:before{
+			background-color: $orange;
+			left:90%;
+			transform: translateY(-50%) rotate(-45deg);
+		}
+	}
+
+	&:nth-child(5n + 3) {
+		background-color: $orange;
+		transform: rotate(-1deg);
+
+		&:before{
+			background-color: $blue;
+			left:50%;
+			transform: translateX(-50%) translateY(-50%) rotate(-92deg);
+		}
+	}
+
+	&:nth-child(5n + 4) {
+		background-color: $blue;
+		transform: rotate(3deg);
+
+		&:before{
+			background-color: $yellow;
+			left:0%;
+			top: 20%;
+			transform: translateX(-50%) rotate(30deg);
+		}
+	}
+
+	&:nth-child(5n + 5) {
+		background-color: $purple;
+		transform: rotate(3deg);
+
+		&:before{
+			background-color: $yellow;
+			left:100%;
+			top: 40%;
+			transform: translateX(-50%) rotate(-15deg);
+		}
+	}
+}
+
+@keyframes logopulse {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(0.9);
+  }
+}
+
+@keyframes slidebg {
+  from {
+    background-position: 0rem 0rem;
+  }
+
+  to {
+    background-position: $background-size $background-size;
+  }
+}
