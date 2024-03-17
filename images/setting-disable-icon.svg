@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="b" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" width="236.63" height="236.63" viewBox="0 0 236.63 236.63">
+  <g id="c" data-name="Top Layer BG">
+    <g>
+      <path d="M159.467,220.459c-27.434,2.39-54.87,2.39-82.305,0-28.761-3.011-57.986-32.23-60.992-60.992-2.39-27.435-2.39-54.87,0-82.304,3.009-28.762,32.229-57.985,60.992-60.992,27.436-2.389,54.87-2.389,82.305,0,28.765,3.01,57.98,32.229,60.992,60.992,2.391,27.435,2.391,54.869,0,82.304-3.008,28.763-32.23,57.983-60.992,60.992Z" fill="none" stroke="#121212" stroke-miterlimit="10" stroke-width="28.756"/>
+      <g>
+        <line x1="78.845" y1="78.845" x2="157.784" y2="157.785" fill="none" stroke="#121212" stroke-linecap="round" stroke-linejoin="round" stroke-width="28.756"/>
+        <line x1="157.784" y1="78.845" x2="78.845" y2="157.785" fill="none" stroke="#121212" stroke-linecap="round" stroke-linejoin="round" stroke-width="28.756"/>
+      </g>
+    </g>
+  </g>
+</svg>

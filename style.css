@@ -7,12 +7,17 @@ img, video {
   max-width: 100%;
 }
 
+img + img {
+  margin-top: 1.4rem;
+}
+
 body {
   background-color: #FFFAED;
+  font-family: "Nunito", Arial, sans-serif;
   font-size: 18px;
   min-height: 100vh;
   padding: 8rem;
-  color: #42210b;
+  color: #121212;
 }
 
 @media only screen and (max-width: 800px) {
@@ -38,15 +43,12 @@ body:before {
           animation: slidebg 16s linear infinite normal;
 }
 
-h1, h2, p {
-  font-family: "Nunito", Arial, sans-serif;
-}
-
 h1 {
   font-size: 4rem;
   font-weight: 900;
   margin-top: 0px;
   text-shadow: 0.2rem 0.2rem rgba(0, 0, 0, 0.2);
+  color: #42210B;
 }
 
 h2 {
@@ -67,6 +69,135 @@ p {
   font-weight: 700;
   margin-bottom: 0px;
   line-height: 1.8;
+}
+
+p span.chat, p span.setting {
+  padding: 0 0.5em;
+  margin: 0 0.2em;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 0.5em;
+  text-decoration: none;
+  color: inherit;
+  font-size: 1em;
+  white-space: nowrap;
+}
+
+p span.chat:before {
+  content: "";
+  display: inline-block;
+  width: 0.8em;
+  height: 0.8em;
+  background-image: url("/images/chat-icon.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-right: 0.3em;
+  vertical-align: middle;
+}
+
+p span.setting:before {
+  content: "";
+  display: inline-block;
+  width: 0.9em;
+  height: 0.9em;
+  background-image: url("/images/setting-enable-icon.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-right: 0.3em;
+  vertical-align: middle;
+  margin-bottom: 0.2em;
+}
+
+p span.setting.disable:before {
+  background-image: url("/images/setting-disable-icon.svg");
+}
+
+.table-wrapper {
+  overflow: scroll;
+}
+
+table {
+  width: 100%;
+  border-spacing: 1rem;
+  table-layout: fixed;
+}
+
+table th {
+  font-size: 1.6rem;
+  font-weight: 800;
+  text-align: right;
+  padding: 0 1rem;
+}
+
+table th span {
+  display: block;
+  font-size: 0.6em;
+}
+
+table td {
+  border-radius: 2rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 1rem;
+  text-align: right;
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+table td.gold:after {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background-image: url("/images/gold-icon.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-left: 0.5em;
+  vertical-align: middle;
+}
+
+table td.rarity {
+  border: 3px solid black;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 1.1rem;
+  letter-spacing: 0.03em;
+  text-align: left;
+}
+
+table td.rarity:before {
+  content: "";
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-right: 1rem;
+  border-radius: 50%;
+  border: 3px solid black;
+}
+
+table td.rarity.rarity-junk {
+  background-color: #D7924C;
+}
+
+table td.rarity.rarity-common {
+  background-color: #FFC5C5;
+}
+
+table td.rarity.rarity-uncommon {
+  background-color: #80CD4C;
+}
+
+table td.rarity.rarity-rare {
+  background-color: #6ED6FF;
+}
+
+table td.rarity.rarity-epic {
+  background-color: #B169FF;
+}
+
+table td.rarity.rarity-legendary {
+  background-color: #F8EA21;
 }
 
 .rule {
@@ -171,6 +302,20 @@ p {
 }
 
 .note a:hover {
+  background-color: #42210B;
+  color: #FFFAED;
+  border-color: #42210B;
+}
+
+.note a.button {
+  padding: 0.6em 1em;
+  font-size: 1.2rem;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-width: 3px;
+  font-weight: 800;
+}
+
+.note a.button:hover {
   background-color: #42210B;
   color: #FFFAED;
   border-color: #42210B;
