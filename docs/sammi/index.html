@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LurkBait Docs | SAMMI Integration</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta property="og:title" content="LurkBait | Help and FAQ's">
+    <meta property="og:description" content="A Twitch powered interactive cozy fishing idle game. Add as an overlay for your stream and let your viewers fish! Reel in the lurkers and boost viewer engagement passively with a fun interactive game that runs itself while you focus on your content.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://blam.cam/">
+    <meta property="og:image" content="https://blam.cam/header.jpg">
+    <meta property="og:image:type" content="image/jpg">
+    <meta property="og:image:width" content="1920">
+    <meta property="og:image:height" content="897">
+    <meta name="twitter:site" content="@cambamthankuman">
+    <meta name="twitter:title" content="LurkBait | Help and FAQ's">
+    <meta name="twitter:description" content="A Twitch powered interactive cozy fishing idle game. Add as an overlay for your stream and let your viewers fish! Reel in the lurkers and boost viewer engagement passively with a fun interactive game that runs itself while you focus on your content.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image:src" content="https://blam.cam/header.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-left">
+            <img class="logo" src="/images/lurkbait-logo.png">
+        </div>
+        <div class="header-right">
+            <div class="header-links">
+                <a href="/docs">Docs</a>
+                <a href="/faqs">FAQ's</a>
+                <a href="/">Home</a>
+            </div>
+            <!--       <div class="header-social">
+        <a href="/">Twitter</a>
+        <a href="/">Discord</a>
+      </div> -->
+        </div>
+    </header>
+    <main class="docs has-sidebar">
+        <div class="sidebar sidebar-box sidebar-left">
+            <h1>Docs</h1>
+            <p>Choose a connection to learn more about how to set it up.</p>
+            <div class="rule"></div>
+            <div class="sidebar-buttons">
+              <a href="/docs/sammi">SAMMI Integration</a>
+              <a href="/docs/streamerbot">Streamer.bot Integration</a>
+              <a href="#" class="coming-soon">Mix It Up Integration</a>
+              <a href="#" class="coming-soon">LurkBait API</a>
+            </div>
+        </div>
+        <div class="content-wrapper has-sidebar-right">
+            <div class="sidebar content-sidebar-right">
+              <div class="navigator sticky">
+                  <h3>Setting up</h3>
+                  <a href="#top">Back to the top</a>
+                  <a href="#setting-up">Setting Up</a>
+                  <a href="#using-variables">Using Variables</a>
+                  <a href="#cast-event">Cast Event</a>
+                  <a href="#snag-event">Snag Event</a>
+                  <a href="#catch-event">Catch Event</a>
+                  <a href="#catch-complete-event">Catch Complete Event</a>
+              </div>
+            </div>
+            <div class="divider"></div>
+            <div id="top" class="content">
+            <h1>SAMMI Integration</h1>
+            
+            <p>If you heard LurkBait can integrate with SAMMI, it indeed can! Big thanks to <a href="https://twitter.com/Landie__" target="_blank">Landie</a> for directing this feature, without them this would not be&nbsp;possible&nbsp;❤️</p>
+            
+
+
+            <h3 id="setting-up">Setting Up</h3>
+
+            <p>LurkBait can use SAMMI Webhooks, if enabled in the LurkBait settings the app sends 4 events to SAMMI with the data outlined below.</p>
+            
+            <p>To use a SAMMI webhook trigger, add a new button and edit its triggers. Add a Webhook Trigger and to capture a specific LurkBait event, enter the name of one of the 4 events below exactly.</p>
+
+            <p>For more information, I highly recommend you check out the SAMMI documation on using <a href="https://sammi.solutions/docs/api/webhooks" target="_blank">Webhook Triggers</a></p>
+            <img src="/images/sammi-trigger.jpg">
+
+            <h3 id="using-variables">Using Variables</h3>
+
+            <p>Once you have added a button with a webhook trigger in SAMMI, data from these events can by adding a "Trigger Pull Data" command inside the button that will pull any data supplied in the webhook request body when SAMMI receives the trigger.</p>
+
+            <p>The "Save Variable As" field can be anything, but for the sake of this example, we will use "lurkbaitData" going forward. Enter "all" in the "Pull Value" field to pull all the data sent by LurkBait as per the events below.</p>
+
+            <p>Variables can then be accessed by using the using the following notation <span class="info">/$lurkbaitData.data.variablename$/</span> for example <span class="info">/$lurkbaitData.data.catchWeight$/</span> returns the catches weight, or <span class="info">/$lurkbaitData.data.catchName$/</span> returns the catches name.</p>
+
+            <p>For more information about using conditional logic, check out the SAMMI documentation on <a href="https://sammi.solutions/docs/commands/statements" target="_blank">Statements and Loops.</a></p>
+            
+            <img src="/images/sammi-command.jpg">
+            
+
+
+            <h3 id="cast-event">LurkBait Cast Event</h3>
+            <p>Triggered when cast occurs, when the users name appears on screen with the text "@username cast a line"</p>
+<pre><code class="language-json">{
+    "trigger": "LurkBait Cast", //Name of the event
+    "username": "cambamthanksman",
+    "displayName": "CamBamThanksMan",
+    "castTrigger": "Bits", //Can return "Test", "Chat", "Points", "Bits", "Sub", "GiftSub", "API"
+}</code></pre>
+            <h3 id="snag-event">LurkBait Snag Event</h3>
+            <p>Triggered when cast occurs, when the users name appears with the text "@username cast a line"</p>
+<pre><code class="language-json">{
+    "trigger": "LurkBait Snag", //Name of the event
+    "username": "cambamthanksman",
+    "displayName": "CamBamThanksMan",
+    "castTrigger": "Bits", //Can return "Test", "Chat", "Points", "Bits", "Sub", "GiftSub", "API"
+    "catchName": "Starfish",
+    "catchDescription": "Let's call them Patrick.",
+    "catchRarity": "Uncommon", //Can return "Junk", "Common", "Uncommon", "Rare", "Epic", "Legendary"
+    "isCustomCatch": false,
+    "catchRating": 1, //Will return between 1 and 3 corresponding to star rating
+    "catchAlertLevel": 1, //Will return between 1 and 3 corresponding to ! level
+    "catchValue": 28,
+    "catchWeight": "0.09",
+    "catchThumbnailURL": "https://blam.cam/thumbnails/Starfish_THUMB.png",
+    "isNew" : "Existing" //Can return either "Existing", "New", or "NewRecord"
+    "playerGold": 0,
+    "playerLifetimeGold": 0,
+    "playerLeaderboardGold": 0
+}</code></pre>
+            <h3 id="catch-event">LurkBait Catch Event</h3>
+            <p>Triggered when catch is revealed and the Catch popup window opens. This data is the same as the Snag event, just provided at a different time in the catch sequence.</p>
+<pre><code class="language-json">{
+    "trigger": "LurkBait Catch", //Name of the event
+    "username": "cambamthanksman",
+    "displayName": "CamBamThanksMan",
+    "castTrigger": "Bits", //Can return "Test", "Chat", "Points", "Bits", "Sub", "GiftSub", "API"
+    "catchName": "Starfish",
+    "catchDescription": "Let's call them Patrick.",
+    "catchRarity": "Uncommon", //Can return "Junk", "Common", "Uncommon", "Rare", "Epic", "Legendary"
+    "isCustomCatch": false,
+    "catchRating": 1, //Will return between 1 and 3 corresponding to star rating
+    "catchAlertLevel": 1, //Will return between 1 and 3 corresponding to ! level
+    "catchValue": 28,
+    "catchWeight": "0.09",
+    "catchThumbnailURL": "https://blam.cam/thumbnails/Starfish_THUMB.png",
+    "isNew" : "Existing" //Can return either "Existing", "New", or "NewRecord"
+    "playerGold": 0,
+    "playerLifetimeGold": 0,
+    "playerLeaderboardGold": 0
+}</code></pre>
+            <h3 id="catch-complete-event">LurkBait Catch Complete Event</h3>
+            <p>Triggered when gold animation completes and the Catch popup window closes.</p>
+<pre><code class="language-json">{
+    "trigger": "LurkBait Catch Complete", //Name of the event
+    "username": "cambamthanksman",
+    "displayName": "CamBamThanksMan",
+    "castTrigger": "Bits", //Can return "Test", "Chat", "Points", "Bits", "Sub", "GiftSub", "API"
+}</code></pre>
+
+        </div>
+        </div>
+    </main>
+    <footer>
+      <img class="footer-logo" src="/images/BLAMCAM_Logo.png">
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="/index.js"></script>
+</body>
+
+</html>

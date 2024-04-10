@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LurkBait Docs | Streamer.bot Integration</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta property="og:title" content="LurkBait | Help and FAQ's">
+    <meta property="og:description" content="A Twitch powered interactive cozy fishing idle game. Add as an overlay for your stream and let your viewers fish! Reel in the lurkers and boost viewer engagement passively with a fun interactive game that runs itself while you focus on your content.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://blam.cam/">
+    <meta property="og:image" content="https://blam.cam/header.jpg">
+    <meta property="og:image:type" content="image/jpg">
+    <meta property="og:image:width" content="1920">
+    <meta property="og:image:height" content="897">
+    <meta name="twitter:site" content="@cambamthankuman">
+    <meta name="twitter:title" content="LurkBait | Help and FAQ's">
+    <meta name="twitter:description" content="A Twitch powered interactive cozy fishing idle game. Add as an overlay for your stream and let your viewers fish! Reel in the lurkers and boost viewer engagement passively with a fun interactive game that runs itself while you focus on your content.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image:src" content="https://blam.cam/header.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-left">
+            <img class="logo" src="/images/lurkbait-logo.png">
+        </div>
+        <div class="header-right">
+            <div class="header-links">
+                <a href="/docs">Docs</a>
+                <a href="/faqs">FAQ's</a>
+                <a href="/">Home</a>
+            </div>
+            <!--       <div class="header-social">
+        <a href="/">Twitter</a>
+        <a href="/">Discord</a>
+      </div> -->
+        </div>
+    </header>
+    <main class="docs has-sidebar">
+        <div class="sidebar sidebar-box sidebar-left">
+            <h1>Docs</h1>
+            <p>Choose a connection to learn more about how to set it up.</p>
+            <div class="rule"></div>
+            <div class="sidebar-buttons">
+              <a href="/docs/sammi">SAMMI Integration</a>
+              <a href="/docs/streamerbot">Streamer.bot Integration</a>
+              <a href="#" class="coming-soon">Mix It Up Integration</a>
+              <a href="#" class="coming-soon">LurkBait API</a>
+            </div>
+        </div>
+        <div class="content-wrapper has-sidebar-right">
+            <div class="sidebar content-sidebar-right">
+              <div class="navigator sticky">
+                  <h3>Setting up</h3>
+                  <a href="#top">Back to the top</a>
+                  <a href="#setting-up">Setting Up</a>
+                  <a href="#using-variables">Using Variables</a>
+                  <a href="#cast-event">Cast Event</a>
+                  <a href="#snag-event">Snag Event</a>
+                  <a href="#catch-event">Catch Event</a>
+                  <a href="#catch-complete-event">Catch Complete Event</a>
+              </div>
+            </div>
+            <div class="divider"></div>
+            <div class="content">
+            <h1>Streamer.bot Integration</h1>
+            
+           <p>If you heard LurkBait can integrate with Streamer.bot, it indeed can! Big thanks to <a href="https://twitter.com/MeepsKitten" target="_blank">MeepsKitten</a> and <a href="https://twitter.com/Lyfesaver74" target="_blank">Lyfesaver</a> for directing this feature, without them this would not be possible ❤️</p>
+
+           <h3 id="setting-up">Setting Up</h3>
+
+           <p>LurkBait can trigger Streamer.bot actions directly throught the Streamer.bot HTTP Server. These actions can then activate sub-actions, or use logic to trigger other actions.</p>
+
+           <p>To get started, start Streamer.bot and click on the <span class="info">Servers/Clients</span> tab, then click on the <span class="info">HTTP Server</span> tab and click <strong>Start Server</strong>. Make sure to enable "Auto Start" if you plan on using LurkBait in future startups of Streamer.bot as it's easy to forget to start the HTTP server.</p>
+
+
+
+           <img class="border" src="/images/sb-server.jpg">
+
+           <p>Then head over to <span class="info">Actions</span> tab and make an Action for each LurkBait event you want to utilize.</p>
+
+           <img class="border" src="/images/sb-actions.jpg">
+            
+            <p>Then head over to LurkBait, open the <span class="lb-button-settings"></span><strong>Settings</strong> menu and scroll down to Connections and tick <span class="setting">Enable Streamer.bot HTTP server connection (beta)</span> and make sure the address and port match the ones from the <span class="info">Servers/Clients</span> tab in Streamer.bot.</p>
+            <p>Hit <strong>Refresh SB Actions</strong> and the dropdowns for the 4 possible LurkBait events should highlight. Each dropdown now contains a full list of every Streamer.bot action you've created, choose the corresponding action for each event you want to utilize.</p>
+
+            <div class="two-col">
+                <div><img class="shadow" src="/images/lb-sb.png"></div>
+                <div><img class="shadow" src="/images/lb-sb-actions.png"></div>
+            </div>
+
+            <h3 id="using-variables">Using Variables</h3>
+
+            <p>Variables can then be accessed by adding Sub-Actions to your connected Actions and using the using the following notation <span class="info">%variablename%</span> for example <span class="info">%catchWeight%</span> returns the catches weight, or <span class="info">%catchName%</span> returns the catches name.</p>
+
+            <p>You do not need to use % notation when using variables within logic statements like If and Global, to see more information about using variables in Streamer.bot check out their docs on <a href="https://wiki.streamer.bot/en/Variables" target="_blank">Variables</a> or <a href="https://wiki.streamer.bot/en/Sub-Actions/Logic/If-Else" target="_blank">If/Else</a> to learn more about logic conditionals in Streamer.bot.</p>
+            
+            <img class="border" src="/images/sb-logic.jpg">
+            
+
+
+            <h3 id="cast-event">LurkBait Cast Event</h3>
+            <p>Triggered when cast occurs, when the users name appears on screen with the text "@username cast a line"</p>
+<pre><code class="language-json">{
+    "trigger": "LurkBait Cast", //Name of the event
+    "username": "cambamthanksman",
+    "displayName": "CamBamThanksMan",
+    "castTrigger": "Bits", //Can return "Test", "Chat", "Points", "Bits", "Sub", "GiftSub", "API"
+}</code></pre>
+            <h3 id="snag-event">LurkBait Snag Event</h3>
+            <p>Triggered when cast occurs, when the users name appears with the text "@username cast a line"</p>
+<pre><code class="language-json">{
+    "trigger": "LurkBait Snag", //Name of the event
+    "username": "cambamthanksman",
+    "displayName": "CamBamThanksMan",
+    "castTrigger": "Bits", //Can return "Test", "Chat", "Points", "Bits", "Sub", "GiftSub", "API"
+    "catchName": "Starfish",
+    "catchDescription": "Let's call them Patrick.",
+    "catchRarity": "Uncommon", //Can return "Junk", "Common", "Uncommon", "Rare", "Epic", "Legendary"
+    "isCustomCatch": false,
+    "catchRating": 1, //Will return between 1 and 3 corresponding to star rating
+    "catchAlertLevel": 1, //Will return between 1 and 3 corresponding to ! level
+    "catchValue": 28,
+    "catchWeight": "0.09",
+    "catchThumbnailURL": "https://blam.cam/thumbnails/Starfish_THUMB.png",
+    "isNew" : "Existing" //Can return either "Existing", "New", or "NewRecord"
+    "playerGold": 0,
+    "playerLifetimeGold": 0,
+    "playerLeaderboardGold": 0
+}</code></pre>
+            <h3 id="catch-event">LurkBait Catch Event</h3>
+            <p>Triggered when catch is revealed and the Catch popup window opens. This data is the same as the Snag event, just provided at a different time in the catch sequence.</p>
+<pre><code class="language-json">{
+    "trigger": "LurkBait Catch", //Name of the event
+    "username": "cambamthanksman",
+    "displayName": "CamBamThanksMan",
+    "castTrigger": "Bits", //Can return "Test", "Chat", "Points", "Bits", "Sub", "GiftSub", "API"
+    "catchName": "Starfish",
+    "catchDescription": "Let's call them Patrick.",
+    "catchRarity": "Uncommon", //Can return "Junk", "Common", "Uncommon", "Rare", "Epic", "Legendary"
+    "isCustomCatch": false,
+    "catchRating": 1, //Will return between 1 and 3 corresponding to star rating
+    "catchAlertLevel": 1, //Will return between 1 and 3 corresponding to ! level
+    "catchValue": 28,
+    "catchWeight": "0.09",
+    "catchThumbnailURL": "https://blam.cam/thumbnails/Starfish_THUMB.png",
+    "isNew" : "Existing" //Can return either "Existing", "New", or "NewRecord"
+    "playerGold": 0,
+    "playerLifetimeGold": 0,
+    "playerLeaderboardGold": 0
+}</code></pre>
+            <h3 id="catch-complete-event">LurkBait Catch Complete Event</h3>
+            <p>Triggered when gold animation completes and the Catch popup window closes.</p>
+<pre><code class="language-json">{
+    "trigger": "LurkBait Catch Complete", //Name of the event
+    "username": "cambamthanksman",
+    "displayName": "CamBamThanksMan",
+    "castTrigger": "Bits", //Can return "Test", "Chat", "Points", "Bits", "Sub", "GiftSub", "API"
+}</code></pre>
+
+        </div>
+        </div>
+    </main>
+    <footer>
+      <img class="footer-logo" src="/images/BLAMCAM_Logo.png">
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="/index.js"></script>
+</body>
+
+</html>

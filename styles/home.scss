@@ -1,0 +1,43 @@
+.home-hero {
+
+    display: flex;
+    background: $yellow;
+    align-items: center;
+    padding: 12rem 9rem 9rem;
+    min-height: 90vh;
+    position: relative;
+    justify-content: space-around;
+    gap: 6rem;
+
+    &:before {
+        @extend .fishy-background;
+        z-index: 0;
+    }
+
+    & > * {
+    	z-index: 1;
+    }
+
+    video {
+    	margin: auto;	
+    }
+
+    .home-hero-left {
+    	flex-basis: 60%;
+    	// flex-grow: 1;
+    	// flex-shrink: 1;
+    	min-width: 500px;
+    }
+
+    .home-hero-right {
+        // flex-grow: 1;
+        // flex-shrink: 1;
+        min-width: 400px;
+    }
+
+    @media only screen and (max-width: $desktop) {
+    	padding: 12rem 4rem 6rem;
+    	flex-wrap: wrap;
+    	text-align: center;
+    }
+}

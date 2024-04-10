@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LurkBait Docs | SAMMI Integration</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta property="og:title" content="LurkBait | Help and FAQ's">
+    <meta property="og:description" content="A Twitch powered interactive cozy fishing idle game. Add as an overlay for your stream and let your viewers fish! Reel in the lurkers and boost viewer engagement passively with a fun interactive game that runs itself while you focus on your content.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://blam.cam/">
+    <meta property="og:image" content="https://blam.cam/header.jpg">
+    <meta property="og:image:type" content="image/jpg">
+    <meta property="og:image:width" content="1920">
+    <meta property="og:image:height" content="897">
+    <meta name="twitter:site" content="@cambamthankuman">
+    <meta name="twitter:title" content="LurkBait | Help and FAQ's">
+    <meta name="twitter:description" content="A Twitch powered interactive cozy fishing idle game. Add as an overlay for your stream and let your viewers fish! Reel in the lurkers and boost viewer engagement passively with a fun interactive game that runs itself while you focus on your content.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image:src" content="https://blam.cam/header.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-left">
+            <img class="logo" src="/images/lurkbait-logo.png">
+        </div>
+        <div class="header-right">
+            <div class="header-links">
+                <a href="/docs">Docs</a>
+                <a href="/faqs">FAQ's</a>
+                <a href="/">Home</a>
+            </div>
+            <!--       <div class="header-social">
+        <a href="/">Twitter</a>
+        <a href="/">Discord</a>
+      </div> -->
+        </div>
+    </header>
+    <main class="docs has-sidebar">
+        <div class="sidebar sidebar-box sidebar-left">
+            <h1>Docs</h1>
+            <p>Choose a connection to learn more about how to set it up.</p>
+            <div class="rule"></div>
+            <div class="sidebar-buttons">
+              <a href="/docs/sammi">Sammi Integration</a>
+              <a href="/docs/streamerbot">SB Integration</a>
+              <a href="#" class="coming-soon">Mix It Up Integration</a>
+              <a href="#" class="coming-soon">LurkBait API</a>
+            </div>
+        </div>
+        <div class="content-wrapper">
+            <div class="content">
+            <h1>LurkBait Integrations</h1>
+            
+            <p>Currently LurkBait supports sending events to both <a href="https://sammi.solutions/" target="_blank">SAMMI</a> and <a href="https://streamer.bot/" target="_blank">Streamer.bot</a> and sends a suite of data about each catch in the form of JSON variables. You can see an outline of the data sent by LurkBait and how to access it by clicking on one of the avaiable connections in the sidebar to the left.</p>
+            <p>You can use these events and the corresponsing information provided to trigger alerts and actions within each bot, and even use if statements and conditionals to trigger specific actions when specific catches or rarities are caught.</p>
+            <p>Both connections can be active at the same time, so you can even combine the powers of Streamer.bot and SAMMI together with other software to expand your creative possibilities even more.</p>
+            <p>I can't provide any support for your creative integration projects but I'd love to see them if you do make anything! 🔥</p>
+
+        </div>
+        </div>
+    </main>
+    <footer>
+      <img class="footer-logo" src="/images/BLAMCAM_Logo.png">
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="/index.js"></script>
+</body>
+
+</html>

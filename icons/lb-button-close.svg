@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="g" data-name="Layer 7" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <g>
+    <rect x="24.259" y="101.337" width="207.482" height="53.327" rx="22.91" ry="22.91" transform="translate(-53.019 128) rotate(-45)" fill="none" stroke="#42210b" stroke-width="32.002"/>
+    <rect x="101.337" y="24.259" width="53.327" height="207.482" rx="22.985" ry="22.985" transform="translate(-53.019 128) rotate(-45)" fill="none" stroke="#42210b" stroke-width="32.002"/>
+  </g>
+  <g>
+    <rect x="24.259" y="101.337" width="207.482" height="53.327" rx="22.91" ry="22.91" transform="translate(-53.019 128) rotate(-45)" fill="#fff3d6" stroke-width="0"/>
+    <rect x="101.337" y="24.259" width="53.327" height="207.482" rx="22.985" ry="22.985" transform="translate(-53.019 128) rotate(-45)" fill="#fff3d6" stroke-width="0"/>
+  </g>
+  <g>
+    <rect x="24.259" y="101.337" width="207.482" height="53.327" rx="22.91" ry="22.91" transform="translate(-53.019 128) rotate(-45)" fill="#fff3d6" stroke-width="0"/>
+    <rect x="101.337" y="24.259" width="53.327" height="207.482" rx="22.985" ry="22.985" transform="translate(-53.019 128) rotate(-45)" fill="#fff3d6" stroke-width="0"/>
+  </g>
+</svg>

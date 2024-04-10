@@ -1,0 +1,275 @@
+$note-margin: 3rem;
+
+.logo-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 2rem;
+	
+	.logo {
+		max-width: 300px;
+		margin-top: -2rem;
+		margin-left: -2rem;
+
+		animation: logopulse 2s ease-in-out infinite alternate;
+	}
+
+	h1 {
+		margin-bottom: 0px;
+	}
+}
+
+.grid-item {
+	width: calc(50% -  #{$note-margin} * 2);
+	margin: $note-margin;
+
+	@media only screen and (max-width: 1200px) {
+		width: 100%;
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+}
+
+.grid-item.element {
+	width:1px;
+	height:1px;
+	margin:0px;
+
+	img {
+		max-width: unset;
+		width: 15rem;
+		height: auto;
+		z-index: 99;
+		position: relative;
+		transform: translateX(-50%) translateY(-50%);
+		transition: 0.1s opacity;
+
+		&:hover {
+			opacity: 0.4;
+		}
+	}
+}
+
+
+
+.note {
+	background-color: $yellow;
+	padding: 4rem;
+	border-radius: 2rem;
+	position: relative;
+
+	transform: rotate(-3deg);
+
+	@media only screen and (max-width: $mobile) {
+		padding: 3rem;
+	}
+
+	h2, p {
+		margin: 2rem 0rem;
+
+		&.tiny-margin {
+			margin-top: 0.8em;
+			margin-bottom: 0.8em;
+			line-height: 1.4;
+		}
+	}
+
+	.commands-list {
+
+
+		.chat-command {
+			padding: 0.2em 0.7em;
+			margin: 0.4em 0;
+			// border: 2px solid;
+			background-color: rgba(0,0,0,0.1);
+			border-radius: 0.5em;
+			text-decoration: none;
+			color: inherit;
+			font-size: 1em;
+			white-space: nowrap;
+
+			&:before {
+				@extend .icons;
+
+				content: $icon-message;
+				margin-right: 0.6em;
+				font-size: 0.8em;
+			}
+
+
+		}
+
+		p {
+			margin: 1.6em 0;
+		}
+
+		.chat-command + p:not(.chat-command) {
+			margin-top: -0.2em;
+		}
+
+
+	}
+
+	& > *:first-child {
+		margin-top: 0px;
+	}
+	& > *:last-child {
+		margin-bottom: 0px;
+	}
+
+	&:before{
+		-webkit-mask-image: url(images/tape-shape-1.svg);
+		mask-image: url(images/tape-shape-1.svg);
+		background-color: $green;
+		-webkit-mask-repeat: no-repeat;
+		mask-position: center;
+		mask-size: cover;
+		mask-repeat: no-repeat;
+		content: "";
+		display: block;
+		position: absolute;
+		top:0px;
+		left:10%;
+		width: 4rem;
+		height: 7rem;
+		transform: translateY(-50%) rotate(15deg);
+		opacity: 0.5;
+	}
+
+	&:nth-child(5n + 2) {
+		background-color: $green;
+		transform: rotate(2deg);
+
+		&:before{
+			background-color: $orange;
+			left:90%;
+			transform: translateY(-50%) rotate(-45deg);
+		}
+	}
+
+	&:nth-child(5n + 3) {
+		background-color: $orange;
+		transform: rotate(-1deg);
+
+		&:before{
+			background-color: $blue;
+			left:50%;
+			transform: translateX(-50%) translateY(-50%) rotate(-92deg);
+		}
+	}
+
+	&:nth-child(5n + 4) {
+		background-color: $blue;
+		transform: rotate(3deg);
+
+		&:before{
+			background-color: $yellow;
+			left:0%;
+			top: 20%;
+			transform: translateX(-50%) rotate(30deg);
+		}
+	}
+
+	&:nth-child(5n + 5) {
+		background-color: $purple;
+		transform: rotate(3deg);
+
+		&:before{
+			background-color: $yellow;
+			left:100%;
+			top: 40%;
+			transform: translateX(-50%) rotate(-15deg);
+		}
+	}
+
+	&.tiny-rotation {
+		transform: rotate(0.5deg);
+	}
+}
+
+table.rarity-table {
+    width: 100%;
+    border-spacing: 1rem;
+    table-layout: fixed;
+
+    th {
+    	font-size: 1.6rem;
+    	font-weight: 800;
+    	text-align: right;
+    	padding: 0 1rem;
+
+    	span {
+    		display: block;
+    		font-size: 0.6em;
+    	}
+    }
+
+    td {
+        border-radius: 2rem;
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: 1rem;
+        text-align: right;
+        font-size: 1.4rem;
+        font-weight: 800;
+
+        &.gold {
+        	&:after {
+        		content:"";
+        		display:inline-block;
+        		width: 1em;
+        		height: 1em;
+        		background-image: url('/images/gold-icon.svg');
+        		background-size: contain;
+        		background-position: center;
+        		background-repeat: no-repeat;
+        		margin-left: 0.5em;
+        		vertical-align: middle;
+        	}
+
+        }
+
+        &.rarity {
+            // border-radius: 1rem 2rem 2rem 1rem;
+            border: 3px solid black;
+            text-transform: uppercase;
+            font-weight: 900;
+            font-size: 1.1rem;
+            letter-spacing: 0.03em;
+            text-align: left;
+
+            &:before {
+            	content:"";
+            	display: inline-block;
+            	width: 0.5rem;
+            	height: 0.5rem;
+            	margin-right: 1rem;
+            	border-radius: 50%;
+            	border: 3px solid black;
+            }
+
+            &.rarity-junk {
+            	background-color: #D7924C;
+            }
+
+            &.rarity-common {
+            	background-color: #FFC5C5;
+            }
+
+            &.rarity-uncommon {
+            	background-color: #80CD4C;
+            }
+
+            &.rarity-rare {
+            	background-color: #6ED6FF;
+            }
+
+            &.rarity-epic {
+            	background-color: #B169FF;
+            }
+
+            &.rarity-legendary {
+            	background-color: #F8EA21;
+            }
+        }
+    }
+}

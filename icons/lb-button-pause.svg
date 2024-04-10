@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="g" data-name="Layer 7" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <g>
+    <rect x="55.69" y="47.861" width="45.118" height="160.277" rx="21.43" ry="21.43" fill="none" stroke="#42210b" stroke-width="32.002"/>
+    <rect x="155.193" y="47.861" width="45.118" height="160.277" rx="21.43" ry="21.43" fill="none" stroke="#42210b" stroke-width="32.002"/>
+  </g>
+  <g>
+    <rect x="55.69" y="47.861" width="45.118" height="160.277" rx="21.43" ry="21.43" fill="#fff3d6" stroke-width="0"/>
+    <rect x="155.193" y="47.861" width="45.118" height="160.277" rx="21.43" ry="21.43" fill="#fff3d6" stroke-width="0"/>
+  </g>
+  <g>
+    <rect x="55.69" y="47.861" width="45.118" height="160.277" rx="21.43" ry="21.43" fill="#fff3d6" stroke-width="0"/>
+    <rect x="155.193" y="47.861" width="45.118" height="160.277" rx="21.43" ry="21.43" fill="#fff3d6" stroke-width="0"/>
+  </g>
+</svg>

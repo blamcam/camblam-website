@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="e" data-name="Top Layer BG" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <g>
+    <polygon points="187.098 85.605 187.098 44.994 68.902 44.994 68.902 85.605 105.143 128 68.902 170.395 68.902 211.006 187.098 211.006 187.098 170.395 150.857 128 187.098 85.605" fill="none" stroke="#42210b" stroke-linecap="round" stroke-linejoin="round" stroke-width="32.002"/>
+    <polygon points="187.098 85.605 187.098 44.994 68.902 44.994 68.902 85.605 105.143 128 68.902 170.395 68.902 211.006 187.098 211.006 187.098 170.395 150.857 128 187.098 85.605" fill="#fff3d6" stroke-width="0"/>
+  </g>
+  <g>
+    <line x1="65.341" y1="69.497" x2="190.659" y2="69.497" fill="none" stroke="#42210b" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+    <line x1="65.341" y1="186.503" x2="190.659" y2="186.503" fill="none" stroke="#42210b" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+  </g>
+</svg>
